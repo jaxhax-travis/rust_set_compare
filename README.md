@@ -102,6 +102,7 @@ $ ./rust_set_compare test1.txt test2.txt
 Just add the `--common` `-c` switch!  This will still show the stats, but the stat about the common records will dump a list of them.
 
 ```
+$ ./rust_set_compare test1.txt test2.txt --common
         ---===[ Compare Sets ]===---
 
  [*] First file: /tmp/test1.txt
@@ -129,10 +130,12 @@ Just add the `--common` `-c` switch!  This will still show the stats, but the st
 There are really two methods here.  It depends on if you want the new and missing broken out, or just a listing of both together.
 
 
-### `--differences`
-`--differences` will provide two lists under the `New Records in Second Set` and `Missing Records in Second Set` headers to show whats different about the second file.
+### `--difference`
+`--difference` will provide two lists under the `New Records in Second Set` and `Missing Records in Second Set` headers to show whats different about the second file.
 
 ```
+$ ./rust_set_compare test1.txt test2.txt --difference
+
         ---===[ Compare Sets ]===---
 
  [*] First file: /tmp/test1.txt
@@ -172,6 +175,8 @@ There are really two methods here.  It depends on if you want the new and missin
 `--symmetric` will show a list that combines the records that exist in one set, but not the other, across both sets.
 
 ```
+$ ./rust_set_compare test1.txt test2.txt --symmetric
+
         ---===[ Compare Sets ]===---
 
  [*] First file: /tmp/test1.txt
@@ -213,6 +218,8 @@ To get a list of all the unique records in both sets, use the `--union` switch.
 The difference between the `--union` switch and the `--common` switch is that `--common` shows records shared in both sets, where `--union` is all records, regardless of if they are in one set or both sets.
 
 ```
+$ ./rust_set_compare test1.txt test2.txt --union
+
         ---===[ Compare Sets ]===---
 
  [*] First file: /tmp/test1.txt
